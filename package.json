@@ -1,0 +1,19 @@
+{
+  "devDependencies": {
+    "electron": "^19.0.7"
+  },
+  "dependencies": {
+    "ecoledirecte.js": "^0.31.1"
+  },
+  "name": "Calendar",
+  "version": "1.0.0",
+  "description": "A calendar for my homeworks ",
+  "main": "main.js",
+  "repository": "https://github.com/mrlulu51/Calendar",
+  "author": "mrlulu51.jar",
+  "license": "MIT",
+
+  "scripts": {
+    "start": "electron ."
+  }
+}
