@@ -1,15 +1,25 @@
-const { app, BrowserWindow } = require("electron")
+const { app, BrowserWindow } = require('electron')
+const path = require('path')
 
-const initWindow = () => {
-    const window = new BrowserWindow({
+function createWindow() {
+    const mainWindow = new BrowserWindow({
+        title: 'Calendar',
         width: 1240,
         height: 720,
-        autoHideMenuBar: true
+        autoHideMenuBar: true,
     })
 
-    window.loadFile('assets/login.html')
+    mainWindow.loadURL('http://localhost:3000')
 }
 
 app.whenReady().then(() => {
-    initWindow()
+    createWindow()
+
+    app.on('activate', function() {
+        if(BrowserWindow.getAllWindows().length === 0) createWindow()
+    })
+})
+
+app.on('window-all-closed', function() {
+    if(process.platform !== 'darwin') app.quit()
 })
