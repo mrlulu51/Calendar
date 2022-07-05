@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Session } from 'ecoledirecte.js';
+import EcoleDirecteAPI from './apis/ecoledirecte'
 
 import LoginForm from './components/LoginForm';
 
@@ -7,11 +7,9 @@ function App() {
   const [ user, setUser ] = useState({ username: '', password: '' });
   const [ error, setError ] = useState("");
 
-  async function Login(details) {
-    const session = new Session(details.username, details.password)
-    const account = await session.login().catch(err => {
-      console.error("This login not working.")
-    })
+  const Login = details => {
+    
+    console.log(details)
   }
   
   return (
